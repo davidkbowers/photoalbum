@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="body-content">
+    <div class="row">
+        <h1>Log in to see your photos.</h1>
+        <form method="POST" action="" class="form">
+            <p><label>Your email: <input type="text" name="useremail" id="useremail" /></label></p>
+            <p><label>Your password: <input type="text" name="userpassword" id="userpassword" /></label></p>
+            <p><button type="submit" id="submit" class="btn-submit">Log In</button></p>
+        </form>
+    </div>
+</div>
+{% endblock %}

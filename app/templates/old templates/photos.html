@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="body-content">
+    <table>
+        {{ currentCol|default(0) }}
+        {% for p in photos %}
+            {% if currentCol.expression is equalto 0 %}
+                <tr><td><img src="{{ p }}" /></td>
+                {% currentCol  = 1 %}
+            {% else  %}
+                <td><img src="{{ p }}" /></td></tr>
+                {% currentCol  = 1 %}
+            {% endif %}
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

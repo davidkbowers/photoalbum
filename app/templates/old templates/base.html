@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blanca's Family Photo Album</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+<ul>
+    <li><a href="{{ url_for('templates', filename='home.html') }}">Home</a></li>
+    <li><a href="{{ url_for('templates', filename='login.html') }}">Log In</a></li>
+    <li><a href="{{ url_for('templates', filename='register.html') }}">Register</a></li>
+    <li><a href="{{ url_for('templates', filename='photos.html') }}">Photos</a></li>
+</ul>
+
+<br/>
+
+<div class="container">
+    {% for message in get_flashed_messages() %}
+        <div class=flash>{{ message }}</div>
+    {% endfor %}
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

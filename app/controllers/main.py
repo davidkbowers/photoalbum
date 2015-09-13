@@ -40,3 +40,19 @@ def logout():
 @login_required
 def restricted():
     return "You can only see this if you are logged in!", 200
+
+
+@main.route('/photos')
+def listphotos():
+    return render_template('photos.html')
+
+# @main.route('/photos')
+# def listphotos():
+#    result = db.session.query(Photo).fetchall()
+#    img_src = []
+#    for row in result:
+#        img_src.append(url_for('static', filename=os.path.join('imgs', row.filename)))
+#
+#    return render_template('photos.html', photos=img_src)\
+
+

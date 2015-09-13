@@ -40,3 +40,33 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return '<User %r>' % self.username
+
+
+class UserSettings(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    user_id = db.Column(db.Integer())
+    randomized = db.Column(db.Boolean())
+    last_photo = db.Column(db.Integer())
+
+    def __init__(self, user_id, randomized, last_photo):
+        self.user_id = user_id
+        self.randomized = randomized
+        self.last_photo = last_photo
+
+    @property
+    def __repr__(self):
+        return '<User Settings %r>' % self.user_id
+
+
+class Photo(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    filename = db.Column(db.String())
+    deleted = db.Column(db.Boolean())
+
+    def __init__(self, filename, deleted):
+        self.filename = filename
+        self.deleted = deleted
+
+    @property
+    def __repr__(self):
+        return '<Photo %r>' % self.filename

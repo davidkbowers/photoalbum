@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="body-content">
+    <table>
+        {% for p in photos %}
+        <tr>
+            <td>{{p.id}}</td>
+            <td>{{ url_for('static/photos', filename='photos/') }}</td>
+            <td>{{p.deleted}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

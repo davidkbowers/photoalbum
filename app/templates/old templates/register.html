@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="body-content">
+    <div class="row">
+        <h1>Please register to see the photos.</h1>
+        <form method="POST" action="" class="form">
+            <p><label>Your name: <input type="text" name="username" id="username" /></label></p>
+            <p><label>Your email: <input type="text"  name="useremail" id="useremail"/></label></p>
+            <p><label>Enter a password: <input type="text" name="userpassword" id="userpassword" /></label></p>
+            <p><label>Confirm your password: <input type="text"  name="confirm" id="confirm" /></label></p>
+            <p><button type="submit" id="sign_up" class="btn-submit">Sign Up</button></p>
+        </form>
+    </div>
+</div>
+{% endblock %}
